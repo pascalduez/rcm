@@ -1,0 +1,21 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/fbjs
+<PROJECT_ROOT>/node_modules/jest-enzyme
+<PROJECT_ROOT>/node_modules/enzyme-matchers
+<PROJECT_ROOT>/node_modules/stylelint
+<PROJECT_ROOT>/node_modules/eslint-plugin-jsx-a11y
+<PROJECT_ROOT>/node_modules/flow-coverage-report
+<PROJECT_ROOT>/dist
+
+[include]
+
+[libs]
+flow-typed
+interfaces
+
+[options]
+esproposal.class_static_fields=enable
+module.ignore_non_literal_requires=true
+module.file_ext=.js
+module.file_ext=.css
+module.name_mapper='^\(.*\)\.css$' -> '<PROJECT_ROOT>/interfaces/CSSModule.js'

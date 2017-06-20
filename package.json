@@ -1,0 +1,114 @@
+{
+  "name": "rcm",
+  "version": "0.1.0",
+  "description": "A collection of React Components",
+  "keywords": [
+    "react",
+    "component",
+    "css-modules"
+  ],
+  "author": {
+    "name": "Pascal Duez",
+    "url": "https://github.com/pascalduez"
+  },
+  "homepage": "https://github.com/pascalduez/rcm",
+  "bugs": "https://github.com/pascalduez/rcm/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pascalduez/rcm.git"
+  },
+  "license": "Unlicense",
+  "files": [
+    "dist",
+    "index.js",
+    "README.md",
+    "UNLICENSE"
+  ],
+  "main": "dist/cjsm/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "lint:css": "stylelint src/**/*.css",
+    "lint:js": "eslint src/",
+    "lint": "run-s lint:*",
+    "typecheck": "flow check src/",
+    "typecheck:coverage": "flow-coverage-report -t text -t html -i 'src/**/*.js' -x 'src/**/*.{spec,story}.js'",
+    "validate": "run-s lint typecheck",
+    "test": "BABEL_ENV=cssm jest",
+    "test:cover": "run-s 'test -- --coverage'",
+    "test:ci": "run-s validate 'test -- --coverage --runInBand --no-watchman'",
+    "pretest:ci": "rm -rf reports/",
+    "styleguide": "start-storybook -p 9001 -c .storybook",
+    "build:js:esm": "BABEL_ENV=esm,cssm babel src/ -d dist/esm --ignore '*.spec.js,*.story.js'",
+    "build:js:cjsm": "babel dist/esm -d dist/cjsm",
+    "build:js": "run-s build:js:*",
+    "build:flow": "flow-copy-source -v -i '**/*.{story,spec}.js' src/ dist/cjsm",
+    "build:css:global": "BABEL_ENV=cssm,globalcss babel src/ > /dev/null",
+    "concat:css": "./scripts/concat-styles.js",
+    "build": "run-s build:** concat:**",
+    "prebuild": "rm -rf dist/",
+    "prepublishOnly": "run-s validate test:cover build"
+  },
+  "babel": {
+    "presets": [
+      "./babelrc.js"
+    ]
+  },
+  "jest-junit": {
+    "suiteName": "rcm unit tests",
+    "output": "./reports/junit-report.xml"
+  },
+  "jest-html-reporter": {
+    "pageTitle": "rcm unit tests",
+    "outputPath": "./reports/output-report.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.1.2",
+    "@storybook/addon-info": "^3.1.4",
+    "@storybook/addon-knobs": "^3.1.2",
+    "@storybook/react": "^3.1.3",
+    "autoprefixer": "^7.1.1",
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-css-modules-transform": "^1.2.7",
+    "babel-plugin-transform-do-expressions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "ci-info": "^1.0.0",
+    "classnames": "^2.2.5",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-css-modules": "^2.7.1",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.1.0",
+    "flow-bin": "^0.48.0",
+    "flow-copy-source": "^1.1.0",
+    "flow-coverage-report": "^0.3.0",
+    "jest": "^20.0.4",
+    "jest-enzyme": "^3.2.0",
+    "jest-html-reporter": "^0.3.0",
+    "jest-junit": "^1.5.1",
+    "multistream": "^2.1.0",
+    "npm-run-all": "^4.0.2",
+    "postcss": "^6.0.2",
+    "postcss-custom-properties": "^6.0.1",
+    "postcss-loader": "^2.0.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "string-to-stream": "^1.1.0",
+    "stylelint": "^7.11.1",
+    "stylelint-config-css-modules": "^1.0.0",
+    "stylelint-config-standard": "^16.0.0"
+  },
+  "peerDependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.3.2",
+    "react-dom": "^15.5.4"
+  }
+}
