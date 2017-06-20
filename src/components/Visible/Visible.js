@@ -2,6 +2,7 @@
 /* global window */
 
 import React, { type Children } from 'react';
+import { canUseDOM, isElement } from '../../utils';
 
 export type Props = {
   children: Children,
@@ -17,11 +18,11 @@ class Visible extends React.Component {
   observer: IntersectionObserver;
 
   state: State = {
-    visible: false,
+    visible: !canUseDOM,
   };
 
   componentDidMount() {
-    if (!this.element) return;
+    if (!isElement(this.element)) return;
 
     this.observer = new window.IntersectionObserver(
       ([entry]) => {
