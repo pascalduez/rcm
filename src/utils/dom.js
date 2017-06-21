@@ -7,10 +7,20 @@ export const canUseDOM: boolean = !!(
   window.document.createElement
 );
 
-export const isDOMNode = (object: any): boolean =>
-  object &&
-  typeof object.nodeType === 'number' &&
-  typeof object.nodeName === 'string';
+export const isNode = (arg: any): boolean =>
+  arg && typeof arg.nodeType === 'number' && typeof arg.nodeName === 'string';
 
-export const isElement = (object: any): boolean =>
-  isDOMNode(object) && object.nodeType > 0;
+export const isElement = (arg: any): boolean =>
+  isNode(arg) && arg.nodeType === 1;
+
+export const isTextNode = (arg: any): boolean =>
+  isNode(arg) && arg.nodeType === 3;
+
+export const isEmptyTextNode = (arg: any): boolean =>
+  isTextNode(arg) && arg.nodeValue === '';
+
+export const isEmptyElement = (arg: any): boolean =>
+  isElement(arg) &&
+  (arg.childNodes.length === 0 ||
+    (arg.childNodes.length === 1 &&
+      (isEmptyTextNode(arg.firstChild) || isEmptyElement(arg.firstChild))));

@@ -1,1 +1,8 @@
-export { canUseDOM, isDOMNode, isElement } from './dom';
+export {
+  canUseDOM,
+  isNode,
+  isElement,
+  isTextNode,
+  isEmptyTextNode,
+  isEmptyElement,
+} from './dom';
