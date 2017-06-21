@@ -1,3 +1,5 @@
+// @flow
+
 declare type DOMHighResTimeStamp = number;
 
 declare type IntersectionObserverEntry = {

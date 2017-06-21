@@ -11,7 +11,7 @@
 
 [libs]
 flow-typed
-interfaces
+interfaces/dom.js
 
 [options]
 esproposal.class_static_fields=enable

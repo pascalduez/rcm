@@ -1,0 +1,10 @@
+
+.trigger {
+  padding: 2rem;
+  background-color: #ccc;
+}
+
+.popover {
+  padding: 5rem;
+  background-color: red;
+}
