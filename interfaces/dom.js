@@ -2,34 +2,37 @@
 
 declare type DOMHighResTimeStamp = number;
 
+declare class DOMRectReadOnly {
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  top: number,
+  right: number,
+  bottom: number,
+  left: number,
+  constructor(x: number, y: number, width: number, height: number): void,
+  fromRect(rectangle?: { x?: number, y?: number, width?: number, height?: number }): DOMRect,
+}
+
+declare class DOMRect extends DOMRectReadOnly {
+  constructor(x: number, y: number, width: number, height: number): void,
+}
+
 declare type IntersectionObserverEntry = {
-  // Read only
-  // Returns the bounds rectangle of the target element as a DOMRectReadOnly.
-  // The bounds are computed as described in the documentation for Element.getBoundingClientRect().
-  boundingClientRect: any,
-  // Read only
-  // Returns the ratio of the intersectionRect to the boundingClientRect.
-  intersectionRatio: any,
-  // Read only
-  // Returns a DOMRectReadOnly representing the target's visible area.
-  intersectionRect: any,
-  // Read only
-  // A Boolean value which is true if the target element intersects with the
-  // intersection observer's root. If this is true, then, the IntersectionObserverEntry
-  // describes a transition into a state of intersection; if it's false, then you
-  // know the transition is from intersecting to not-intersecting.
+  boundingClientRect: DOMRectReadOnly,
+  intersectionRatio: number,
+  intersectionRect: DOMRectReadOnly,
   isIntersecting: Boolean,
-  // Read only
-  // Returns a DOMRectReadOnly for the intersection observer's root.
-  rootBounds: any,
-  // Read only
-  // The Element whose intersection with the root changed.
+  rootBounds: DOMRectReadOnly,
   target: HTMLElement,
-  // Read only
-  // A DOMHighResTimeStamp indicating the time at which the intersection was
-  // recorded, relative to the IntersectionObserver's time origin.
   time: DOMHighResTimeStamp,
 };
+
+declare type IntersectionObserverCallback = (
+  entries: Array<IntersectionObserverEntry>,
+  observer: IntersectionObserver,
+) => any;
 
 declare type IntersectionObserverOptions = {
   root?: Node | null,
@@ -39,13 +42,11 @@ declare type IntersectionObserverOptions = {
 
 declare class IntersectionObserver {
   constructor(
-    callback: (
-      arr: Array<IntersectionObserverEntry>,
-      options: IntersectionObserverOptions
-    ) => any
+    callback: IntersectionObserverCallback,
+    options: IntersectionObserverOptions
   ): void,
-  observe(target: Node): void,
+  observe(target: HTMLElement): void,
+  unobserve(): void,
   takeRecords(): Array<IntersectionObserverEntry>,
   disconnect(): void,
-  unobserve(): void,
 }
