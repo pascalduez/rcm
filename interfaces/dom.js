@@ -50,3 +50,36 @@ declare class IntersectionObserver {
   takeRecords(): Array<IntersectionObserverEntry>,
   disconnect(): void,
 }
+
+
+declare type ResizeObserverEntry = {
+  boundingClientRect: DOMRectReadOnly,
+  intersectionRatio: number,
+  intersectionRect: DOMRectReadOnly,
+  isIntersecting: Boolean,
+  rootBounds: DOMRectReadOnly,
+  target: HTMLElement,
+  time: DOMHighResTimeStamp,
+};
+
+declare type ResizeObserverCallback = (
+  entries: Array<ResizeObserverEntry>,
+  observer: ResizeObserver,
+) => any;
+
+declare type ResizeObserverOptions = {
+  root?: Node | null,
+  rootMargin?: string,
+  threshold?: number | Array<number>,
+};
+
+declare class ResizeObserver {
+  constructor(
+    callback: ResizeObserverCallback,
+    options: ResizeObserverOptions
+  ): void,
+  observe(target: HTMLElement): void,
+  unobserve(): void,
+  takeRecords(): Array<ResizeObserverEntry>,
+  disconnect(): void,
+}

@@ -1,3 +1,5 @@
+// @flow
+
 export {
   canUseDOM,
   isNode,
