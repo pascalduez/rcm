@@ -1,0 +1,60 @@
+
+/*
+Base em at 16px base font size: 0.063em
+
+20em (320px) 19.938
+30em (480px) 29.938
+37.5em (600px) 37.438
+48em (768px) 47.938
+56.250em (900px) 56.188
+68.750em (1100px) 68.688
+81.250em (1300px) 81.188
+*/
+
+@media screen and (max-width: 19.938em) {
+  .xsm {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 20em) and (max-width: 29.938em) {
+  .sm {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 37.438em) {
+  .md {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 37.5em) and (max-width: 47.938em) {
+  .lg {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 48em) and (max-width: 56.188em) {
+  .xlg {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 56.25em) and (max-width: 68.688em) {
+  .wd {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 68.75em) and (max-width: 81.188em) {
+  .xwd {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 81.25em) {
+  .xxwd {
+    display: none;
+  }
+}
