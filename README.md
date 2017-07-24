@@ -10,7 +10,7 @@
 
 ## Licence
 
-react-module-boilerplate is [unlicensed](http://unlicense.org/).
+rcm is [unlicensed](http://unlicense.org/).
 
 
 [license-url]: UNLICENSE
