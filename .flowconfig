@@ -9,7 +9,11 @@
 flow-typed
 interfaces/dom.js
 
+[lints]
+all=warn
+
 [options]
+include_warnings=true
 esproposal.class_static_fields=enable
 module.ignore_non_literal_requires=true
 module.file_ext=.js
