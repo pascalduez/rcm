@@ -15,6 +15,10 @@ function Dummy({
   return <p ref={refCallback}>{visible ? 'YES' : 'NO'}</p>;
 }
 
-storiesOf('Visible', module).add('Demo', () =>
-  <div style={{ minHeight: '200vh' }}><Visible><Dummy /></Visible></div>
-);
+storiesOf('Visible', module).add('Demo', () => (
+  <div style={{ minHeight: '200vh' }}>
+    <Visible>
+      <Dummy />
+    </Visible>
+  </div>
+));

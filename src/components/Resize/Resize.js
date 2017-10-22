@@ -37,7 +37,9 @@ class Resize extends React.Component {
 
   render() {
     return React.cloneElement(this.props.children, {
-      refCallback: node => (this.element = node),
+      refCallback: (node) => {
+        this.element = node;
+      },
       entry: this.state.entry,
     });
   }

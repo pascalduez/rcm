@@ -1,7 +1,11 @@
-import { configure, setAddon } from '@storybook/react';
-import infoAddon from '@storybook/addon-info';
+import { configure } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 
-setAddon(infoAddon);
+setOptions({
+  name: 'React module boilerplate',
+  downPanelInRight: true,
+  sidebarAnimations: true,
+});
 
 const req = require.context('../src/components', true, /.story.js$/);
 

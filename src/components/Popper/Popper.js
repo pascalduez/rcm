@@ -116,11 +116,18 @@ class Popper extends React.Component {
   render() {
     return (
       <div>
-        <div ref={node => (this.trigger = node)} className={styles.trigger}>
+        <div
+          ref={(node) => {
+            this.trigger = node;
+          }}
+          className={styles.trigger}
+        >
           Trigger
         </div>
         <div
-          ref={node => (this.popover = node)}
+          ref={(node) => {
+            this.popover = node;
+          }}
           style={this.renderStyles()}
           className={styles.popover}
         >

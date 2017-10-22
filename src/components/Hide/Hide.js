@@ -34,6 +34,7 @@ function Hide({
   xwd,
   xxwd,
   ...extraProps
+  // eslint-disable-next-line
 }: Props) {
   const rootClasses = classNames(
     {

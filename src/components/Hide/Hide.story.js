@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 
 import Hide from './Hide';
 
-storiesOf('Hide', module).add('Demo', () =>
+storiesOf('Hide', module).add('Demo', () => (
   <div>
     <Hide tagName="div" style={{ padding: '1rem' }} xsm>
       Hidden at xsm breakpoint
@@ -32,4 +32,4 @@ storiesOf('Hide', module).add('Demo', () =>
       Hidden at xxwd breakpoint
     </Hide>
   </div>
-);
+));

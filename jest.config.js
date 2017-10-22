@@ -11,13 +11,14 @@ const config = {
     '!src/**/*.type.js',
     '!src/**/stories/*.js',
   ],
+  setupFiles: ['./test/shim', './test/setup'],
   setupTestFrameworkScriptFile: 'jest-enzyme',
 };
 
 if (env === 'ci') {
   Object.assign(config, {
     coverageDirectory: './reports/coverage',
-    testResultsProcessor: './scripts/reports.js',
+    testResultsProcessor: './test/report',
   });
 }
 
