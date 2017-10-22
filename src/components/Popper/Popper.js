@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Children } from 'react';
+import React, { type Node } from 'react';
 import PopperCtor from 'popper.js';
 
 import styles from './Popper.css';
@@ -26,7 +26,7 @@ export type Props = {
   placement?: Placement,
   eventsEnabled?: boolean,
   modifiers?: Object,
-  children: Children,
+  children: Node,
 };
 
 type State = {
@@ -40,10 +40,9 @@ type State = {
   },
 };
 
-class Popper extends React.Component {
-  props: Props;
-  trigger: HTMLElement;
-  popover: HTMLElement;
+class Popper extends React.Component<Props, State> {
+  trigger: ?HTMLElement;
+  popover: ?HTMLElement;
   instance: Object;
 
   static defaultProps = {
@@ -52,7 +51,7 @@ class Popper extends React.Component {
     modifiers: {},
   };
 
-  state: State = {
+  state = {
     data: {
       offsets: {
         popper: {

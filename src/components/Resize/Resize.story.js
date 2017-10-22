@@ -1,13 +1,13 @@
 // @flow
 
-import React from 'react';
+import React, { type Ref } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Resize from './Resize';
 
 type Props = {
   entry?: ?IntersectionObserverEntry,
-  refCallback?: (node: HTMLElement) => void,
+  refCallback?: Ref<*>,
 };
 
 function Dummy({ entry, refCallback }: Props) {

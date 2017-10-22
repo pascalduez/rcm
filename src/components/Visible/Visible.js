@@ -1,23 +1,22 @@
 /* @flow */
 /* global window */
 
-import React, { type Children } from 'react';
+import React, { type Element } from 'react';
 import { canUseDOM, isElement } from '../../utils';
 
 export type Props = {
-  children: Children,
+  children: Element<*>,
 };
 
 type State = {
   visible: boolean,
 };
 
-class Visible extends React.Component {
-  props: Props;
+class Visible extends React.Component<Props, State> {
   element: HTMLElement;
   observer: IntersectionObserver;
 
-  state: State = {
+  state = {
     visible: !canUseDOM,
   };
 

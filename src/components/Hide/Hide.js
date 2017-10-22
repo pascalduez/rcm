@@ -1,14 +1,14 @@
 /* @flow */
 
-import React, { type Children } from 'react';
+import React, { type Node, type Element } from 'react';
 import classNames from 'classnames';
 
 import styles from './Hide.css';
 
 export type Props = {
   tagName?: string,
-  component?: React$Element<*>,
-  children: Children,
+  component?: Element<*>,
+  children?: Node,
   className?: string,
   xsm?: boolean,
   sm?: boolean,

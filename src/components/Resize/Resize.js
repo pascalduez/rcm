@@ -1,23 +1,22 @@
 /* @flow */
 /* global window */
 
-import React, { type Children } from 'react';
+import React, { type Element } from 'react';
 import { isElement } from '../../utils';
 
 export type Props = {
-  children: Children,
+  children: Element<*>,
 };
 
 type State = {
   entry: ?IntersectionObserverEntry,
 };
 
-class Resize extends React.Component {
-  props: Props;
+class Resize extends React.Component<Props, State> {
   element: HTMLElement;
   observer: ResizeObserver;
 
-  state: State = {
+  state = {
     entry: null,
   };
 

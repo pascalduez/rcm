@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { type Ref } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Visible from './Visible';
@@ -9,10 +9,10 @@ function Dummy({
   refCallback,
   visible,
 }: {
-  refCallback?: (node: HTMLElement) => void,
+  refCallback?: Ref<*>,
   visible?: boolean,
 }) {
-  return <p ref={refCallback}>{visible ? 'YES' : 'NO'}</p>;
+  return <p ref={refCallback}>{(visible === true) ? 'YES' : 'NO'}</p>;
 }
 
 storiesOf('Visible', module).add('Demo', () => (
