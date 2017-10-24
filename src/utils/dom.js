@@ -1,7 +1,7 @@
 /* @flow */
 /* global window */
 
-export const canUseDOM: boolean = !!(
+export const canUseDOM = (): boolean => !!(
   typeof window !== 'undefined' &&
   window.document &&
   window.document.createElement
