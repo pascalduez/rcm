@@ -1,11 +1,12 @@
 /* @flow */
 /* global window */
 
-export const canUseDOM = (): boolean => !!(
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement
-);
+export const canUseDOM = (): boolean =>
+  !!(
+    typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement
+  );
 
 export const isNode = (arg: any): boolean =>
   arg && typeof arg.nodeType === 'number' && typeof arg.nodeName === 'string';

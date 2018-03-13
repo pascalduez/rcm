@@ -5,4 +5,4 @@ import { storiesOf } from '@storybook/react';
 
 import Collapsible from './Collapsible';
 
-storiesOf('Collapsible', module).add('Demo', () => ());
+storiesOf('Collapsible', module).add('Demo', () => {});

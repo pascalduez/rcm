@@ -1,42 +1,66 @@
-const env = {
-  list: (process.env.BABEL_ENV || process.env.NODE_ENV || '').split(','),
-  has(feature) {
-    return this.list.indexOf(feature) > -1;
-  },
-};
+/**
+ * `cssm`       CSS modules
+ * `cssglobal`  global css classnames
+ * `csslocal`   scoped css classnames (default)
+ * `cjsm`       commonjs modules
+ * `esm`        ES2015+ modules (default)
+ */
+
+const env = (process.env.BABEL_ENV || '').split(',');
+
+/**
+ * [CSS modules]
+ * https://github.com/css-modules/css-modules
+ * https://github.com/michalkvasnicak/babel-plugin-css-modules-transform
+ *
+ * [ES2018+]
+ * https://babeljs.io/docs/plugins/preset-env
+ *
+ * [Experimental]
+ * https://babeljs.io/docs/plugins/transform-object-rest-spread
+ * https://babeljs.io/docs/plugins/transform-class-properties
+ * https://babeljs.io/docs/plugins/transform-do-expressions
+ *
+ * [React]
+ * https://babeljs.io/docs/plugins/preset-react
+ *
+ * [Flow]
+ * https://babeljs.io/docs/plugins/preset-flow
+ */
 
 const presets = [
-  ['env', {
-    targets: {
-      browsers: ['last 2 versions', '> 1%'],
-      node: 'current',
+  [
+    '@babel/env',
+    {
+      targets: {
+        node: 'current',
+      },
+      modules: env.includes('cjsm') ? 'commonjs' : false,
     },
-    modules: env.has('esm') ? false : 'commonjs',
-  }],
-  'react',
+  ],
+  '@babel/react',
+  '@babel/flow',
 ];
 
 const plugins = [
-  'transform-object-rest-spread',
-  'transform-class-properties',
-  'transform-do-expressions',
+  '@babel/proposal-object-rest-spread',
+  '@babel/proposal-class-properties',
+  '@babel/proposal-do-expressions',
 ];
 
-const cssClassPattern = env.has('globalcss')
+const cssClassPattern = env.includes('cssglobal')
   ? '[name]-[local]'
   : '[name]-[local]_[hash:base64:5]';
 
-const cssDistTarget = env.has('globalcss')
+const cssDistTarget = env.includes('cssglobal')
   ? './dist/stylesheets/global'
   : './dist/stylesheets/local';
 
 const cssmPlugin = [
-  'css-modules-transform', {
+  'css-modules-transform',
+  {
     generateScopedName: cssClassPattern,
-    append: [
-      './src/theme',
-      'autoprefixer',
-    ],
+    append: ['./src/theme', 'autoprefixer'],
     extractCss: {
       dir: cssDistTarget,
       relativeRoot: './src/',
@@ -45,12 +69,11 @@ const cssmPlugin = [
   },
 ];
 
-if (env.has('cssm')) {
+if (env.includes('cssm')) {
   plugins.push(cssmPlugin);
 }
 
-
-module.exports = {
+module.exports = () => ({
   presets,
   plugins,
-};
+});

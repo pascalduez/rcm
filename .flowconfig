@@ -1,7 +1,7 @@
 [ignore]
-<PROJECT_ROOT>/node_modules/stylelint
-<PROJECT_ROOT>/node_modules/flow-coverage-report
 <PROJECT_ROOT>/dist
+
+[untyped]
 
 [include]
 
@@ -16,6 +16,6 @@ all=warn
 include_warnings=true
 esproposal.class_static_fields=enable
 module.ignore_non_literal_requires=true
-module.file_ext=.js
-module.file_ext=.css
 module.name_mapper='^\(.*\)\.css$' -> '<PROJECT_ROOT>/interfaces/CSSModule.js'
+
+[strict]
