@@ -8,3 +8,5 @@ export {
   isEmptyTextNode,
   isEmptyElement,
 } from './dom';
+
+export { getElementDisplayName } from './react';
