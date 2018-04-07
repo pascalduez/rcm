@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Element } from 'react';
+import * as React from 'react';
 import { canUseDOM } from '../../utils';
 
 type State = {
@@ -13,7 +13,7 @@ export type Props = {
     getActionProps: Function,
     getDrawerProps: Function,
     isCollapsed: boolean
-  ) => Element<*>,
+  ) => React.Element<*>,
 };
 
 let idcounter = 0;

@@ -1,14 +1,14 @@
 /* @flow */
 
-import React, { type Node, type Element } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 
 import styles from './Hide.css';
 
 export type Props = {
   tagName?: string,
-  component?: Element<*>,
-  children?: Node,
+  component?: React.Element<*>,
+  children?: React.Node,
   className?: string,
   xsm?: boolean,
   sm?: boolean,
@@ -34,7 +34,6 @@ function Hide({
   xwd,
   xxwd,
   ...extraProps
-  // eslint-disable-next-line
 }: Props) {
   const rootClasses = classNames(
     {

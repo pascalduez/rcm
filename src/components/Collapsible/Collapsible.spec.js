@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import { render, mount } from 'enzyme';
 
 import Collapsible from './Collapsible';
@@ -48,15 +48,17 @@ describe('<Collapsible />', () => {
   describe('the `getActionProps` helper', () => {
     it('should properly merge properties', () => {
       const spy = jest.fn();
-      const wrapper = mount(<Collapsible
-        render={getActionProps => (
-          <button
-            {...getActionProps({
+      const wrapper = mount(
+        <Collapsible
+          render={getActionProps => (
+            <button
+              {...getActionProps({
                 onClick: spy,
               })}
-          />
+            />
           )}
-      />);
+        />
+      );
 
       wrapper.find('button').simulate('click');
 
@@ -66,17 +68,19 @@ describe('<Collapsible />', () => {
 
   describe('the `getDrawerProps` helper', () => {
     it('should properly merge properties', () => {
-      const wrapper = mount(<Collapsible
-        render={(getActionProps, getDrawerProps) => (
-          <div
-            {...getDrawerProps({
+      const wrapper = mount(
+        <Collapsible
+          render={(getActionProps, getDrawerProps) => (
+            <div
+              {...getDrawerProps({
                 style: { minHeight: '200px' },
               })}
-          >
+            >
               Test text...
-          </div>
+            </div>
           )}
-      />);
+        />
+      );
 
       expect(wrapper.find('div')).toHaveStyle('display', 'block');
       expect(wrapper.find('div')).toHaveStyle('minHeight', '200px');

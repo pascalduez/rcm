@@ -1,8 +1,8 @@
 // @flow
 
-import type { Element } from 'react';
+import * as React from 'react';
 
-export const getElementDisplayName = (element: Element<*>): string =>
+export const getElementDisplayName = (element: React.Element<*>): string =>
   element.type.displayName ||
   // Function name.
   element.type.name ||

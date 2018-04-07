@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node } from 'react';
+import * as React from 'react';
 import PopperCtor from 'popper.js';
 
 import styles from './Popper.css';
@@ -26,7 +26,7 @@ export type Props = {
   placement?: Placement,
   eventsEnabled?: boolean,
   modifiers?: Object,
-  children: Node,
+  children: React.Node,
 };
 
 type State = {
@@ -75,7 +75,7 @@ class Popper extends React.Component<Props, State> {
       eventsEnabled,
       modifiers,
       // @TODO
-      onUpdate: (data) => {
+      onUpdate: data => {
         this.setState({ data });
       },
     };
@@ -116,7 +116,7 @@ class Popper extends React.Component<Props, State> {
     return (
       <div>
         <div
-          ref={(node) => {
+          ref={node => {
             this.trigger = node;
           }}
           className={styles.trigger}
@@ -124,7 +124,7 @@ class Popper extends React.Component<Props, State> {
           Trigger
         </div>
         <div
-          ref={(node) => {
+          ref={node => {
             this.popover = node;
           }}
           style={this.renderStyles()}

@@ -1,11 +1,11 @@
 /* @flow */
 /* global window */
 
-import React, { type Element } from 'react';
+import * as React from 'react';
 import { isElement } from '../../utils';
 
 export type Props = {
-  children: Element<*>,
+  children: React.Element<*>,
 };
 
 type State = {
@@ -36,7 +36,7 @@ class Resize extends React.Component<Props, State> {
 
   render() {
     return React.cloneElement(this.props.children, {
-      refCallback: (node) => {
+      refCallback: node => {
         this.element = node;
       },
       entry: this.state.entry,

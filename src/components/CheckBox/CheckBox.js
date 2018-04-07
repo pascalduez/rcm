@@ -20,7 +20,7 @@ export type Props = {
 };
 
 class CheckBox extends React.Component<Props, void> {
-  inputRef: HTMLInputElement = React.createRef();
+  inputRef: React.Ref<HTMLInputElement> = React.createRef();
 
   static defaultProps = {
     classes: {},
