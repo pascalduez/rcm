@@ -1,0 +1,223 @@
+/* -------------------- Font size ------------------------------------------- */
+
+.fontSizeSmall {
+  font-size: $font-size-small-mobile;
+
+  @media screen and (min-width: $screen-small) {
+    font-size: $font-size-small;
+  }
+}
+
+.fontSizeBase {
+  font-size: $font-size-base-mobile;
+
+  @media screen and (min-width: $screen-small) {
+    font-size: $font-size-base;
+  }
+}
+
+.fontSizeBig {
+  font-size: $font-size-big-mobile;
+
+  @media screen and (min-width: $screen-small) {
+    font-size: $font-size-big;
+  }
+}
+
+.fontSizeBigger {
+  font-size: $font-size-bigger-mobile;
+
+  @media screen and (min-width: $screen-small) {
+    font-size: $font-size-bigger;
+  }
+}
+
+/* -------------------- Font weight ----------------------------------------- */
+
+.fontWeightNormal {
+  font-weight: 300;
+}
+
+.fontWeightBold {
+  font-weight: 400;
+}
+
+/* -------------------- Font style ------------------------------------------ */
+
+.fontStyleNormal {
+  font-style: normal;
+}
+
+.fontStyleItalic {
+  font-style: italic;
+}
+
+.fontStyleOblique {
+  font-style: oblique;
+}
+
+/* -------------------- Color ----------------------------------------------- */
+
+.colorInherit {
+  color: inherit;
+}
+
+.colorBase {
+  color: $color-text;
+}
+
+.colorLight {
+  color: $color-text-light;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.colorGreyLighter {
+  color: $color-grey-lighter;
+}
+
+.colorGreyLight {
+  color: $color-grey-light;
+}
+
+.colorGrey {
+  color: $color-grey;
+}
+
+.colorGreyDark {
+  color: $color-grey-dark;
+}
+
+.colorGreyDarker {
+  color: $color-grey-darker;
+}
+
+.colorInfo {
+  color: $color-info;
+}
+
+.colorSuccess {
+  color: $color-success;
+}
+
+.colorWarning {
+  color: $color-warning;
+}
+
+.colorDanger {
+  color: $color-danger;
+}
+
+.colorDisabled {
+  color: $color-grey-darker;
+}
+
+/* -------------------- Color ----------------------------------------------- */
+
+.hoverColorInherit {
+  &:hover {
+    color: inherit;
+  }
+}
+
+.hoverColorWhite {
+  &:hover {
+    color: white;
+  }
+}
+
+/* -------------------- Text align ------------------------------------------ */
+
+.textAlignStart {
+  text-align: left;
+  text-align: start;
+}
+
+.textAlignEnd {
+  text-align: right;
+  text-align: end;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+/* -------------------- Text transform -------------------------------------- */
+
+.textTransformCapitallize {
+  text-transform: capitalize;
+}
+
+.textTransformLowercase {
+  text-transform: lowercase;
+}
+
+.textTransformUppercase {
+  text-transform: uppercase;
+}
+
+/* -------------------- Text decoration ------------------------------------- */
+
+.textDecorationOverline {
+  text-decoration: overline;
+}
+
+.textDecorationUnderline {
+  text-decoration: underline;
+}
+
+.textDecorationLineThrough {
+  text-decoration: line-through;
+}
+
+/* -------------------- Text overflow --------------------------------------- */
+
+.truncate {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.break {
+  max-width: 100%;
+  word-break: break-all;
+}
+
+/* -------------------- Display --------------------------------------------- */
+
+.displayInline {
+  display: inline;
+}
+
+.displayInlineBlock {
+  display: inline-block;
+}
+
+.displayBlock {
+  display: block;
+}
+
+/* -------------------- User select ----------------------------------------- */
+
+.selectAuto {
+  user-select: auto;
+}
+
+.selectText {
+  user-select: text;
+}
+
+.selectNone {
+  user-select: none;
+}
+
+.selectContain {
+  user-select: contain;
+}
+
+.selectAll {
+  user-select: all;
+}

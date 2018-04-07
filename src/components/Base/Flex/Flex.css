@@ -1,0 +1,331 @@
+.flex {
+  display: flex;
+}
+
+.flexInline {
+  display: inline-flex;
+}
+
+
+// -------------------- Direction: row -----------------------------------------
+
+.flexRow {
+  flex-direction: row;
+}
+
+.flexRowReverse {
+  flex-direction: row-reverse;
+}
+
+
+// -------------------- Direction: column --------------------------------------
+
+.flexCol {
+  flex-direction: column;
+}
+
+.flexColReverse {
+  flex-direction: column-reverse;
+}
+
+
+// -------------------- Wrap ---------------------------------------------------
+
+.flexWrap {
+  flex-wrap: wrap;
+}
+
+.flexNoWrap {
+  flex-wrap: nowrap;
+}
+
+.flexWrapReverse {
+  flex-wrap: wrap-reverse;
+}
+
+
+// -------------------- Justify: content ---------------------------------------
+
+//
+// Align items along the main axis of the current line of the flex container.
+//
+
+.flexJustifyStart {
+  justify-content: flex-start;
+}
+
+.flexJustifyEnd {
+  justify-content: flex-end;
+}
+
+.flexJustifyCenter {
+  justify-content: center;
+}
+
+.flexJustifyBetween {
+  justify-content: space-between;
+}
+
+.flexJustifyAround {
+  justify-content: space-around;
+}
+
+
+// -------------------- Align: items -------------------------------------------
+
+//
+// Align items in the cross axis of the current line of the flex container
+// Similar to `justify-content` but in the perpendicular direction
+//
+
+.flexAlignItemsStart {
+  align-items: flex-start;
+}
+
+.flexAlignItemsEnd {
+  align-items: flex-end;
+}
+
+.flexAlignItemsCenter {
+  align-items: center;
+}
+
+.flexAlignItemsStretch {
+  align-items: stretch;
+}
+
+.flexAlignItemsBaseline {
+  align-items: baseline;
+}
+
+
+// -------------------- Align: content -----------------------------------------
+
+//
+// Aligns items within the flex container when there is extra
+// space in the cross-axis
+//
+// Has no effect when there is only one line of flex items.
+//
+
+.flexAlignContentStart {
+  align-content: flex-start;
+}
+
+.flexAlignContentEnd {
+  align-content: flex-end;
+}
+
+.flexAlignContentCenter {
+  align-content: center;
+}
+
+.flexAlignContentStretch {
+  align-content: stretch;
+}
+
+.flexAlignContentBetween {
+  align-content: space-between;
+}
+
+.flexAlignContentAround {
+  align-content: space-around;
+}
+
+
+// -------------------- Applies to flex items ----------------------------------
+
+//
+// Override default alignment of single item when specified by `align-items`
+//
+
+.flexAlignSelfStart {
+  align-self: flex-start;
+}
+
+.flexAlignSelfEnd {
+  align-self: flex-end;
+}
+
+.flexAlignSelfCenter {
+  align-self: center;
+}
+
+.flexAlignSelfStretch {
+  align-self: stretch;
+}
+
+.flexAlignSelfBaseline {
+  align-self: baseline;
+}
+
+.flexAlignSelfLastBaseline {
+  align-self: last baseline;
+}
+
+.flexAlignSelfAuto {
+  align-self: auto;
+}
+
+
+//
+// Change order without editing underlying HTML
+//
+
+.flexOrderFirst {
+  order: -1;
+}
+
+.flexOrderLast {
+  order: 1;
+}
+
+.flexOrderNone {
+  order: 0;
+}
+
+
+//
+// Specify the flex grow factor, which determines how much the flex item will
+// grow relative to the rest of the flex items in the flex container.
+//
+// Supports 1-5 proportions
+//
+// 1. Provide all values to avoid IE10 bug with shorthand flex
+//    - http://git.io/vllC7
+//
+//    Use `0%` to avoid bug in IE10/11 with unitless flex basis. Using this
+//    instead of `auto` as this matches what the default would be with `flex`
+//    shorthand - http://git.io/vllWx
+//
+
+.flexGrow1 {
+  flex: 1 1 0%; /* 1 */
+}
+
+.flexGrow2 {
+  flex: 2 1 0%;
+}
+
+.flexGrow3 {
+  flex: 3 1 0%;
+}
+
+.flexGrow4 {
+  flex: 4 1 0%;
+}
+
+.flexGrow5 {
+  flex: 5 1 0%;
+}
+
+//
+// Specify the flex shrink factor, which determines how much the flex item will
+// shrink relative to the rest of the flex items in the flex container.
+//
+
+.flexShrink0 {
+  flex-shrink: 0;
+}
+
+.flexShrink1 {
+  flex-shrink: 1;
+}
+
+.flexShrink2 {
+  flex-shrink: 2;
+}
+
+.flexShrink3 {
+  flex-shrink: 3;
+}
+
+.flexShrink4 {
+  flex-shrink: 4;
+}
+
+.flexShrink5 {
+  flex-shrink: 5;
+}
+
+
+//
+// Aligning with `auto` margins
+// http://www.w3.org/TR/css-flexbox-1/#auto-margins
+//
+
+.flexExpand {
+  margin: auto;
+}
+
+.flexExpandLeft {
+  margin-left: auto;
+}
+
+.flexExpandRight {
+  margin-right: auto;
+}
+
+.flexExpandTop {
+  margin-top: auto;
+}
+
+.flexExpandBottom {
+  margin-bottom: auto;
+}
+
+
+//
+// Basis
+//
+
+.flexBasisAuto {
+  flex-basis: auto;
+}
+
+.flexBasis0 {
+  flex-basis: 0;
+}
+
+
+//
+// Shorthand
+//
+// Declares all values instead of keywords like 'initial' to work around IE10
+// https://www.w3.org/TR/css-flexbox-1/#flex-common
+//
+// 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+//    This ensures it overrides flex-basis set in other utilities.
+//
+
+//
+// Sizes the item based on the width/height properties
+//
+
+.flexInitial {
+  flex: 0 1 auto;
+  flex-basis: auto; // 1
+}
+
+
+//
+// Sizes the item based on the width/height properties, but makes them fully
+// flexible, so that they absorb any free space along the main axis.
+//
+
+.flexAuto {
+  flex: 1 1 auto;
+  flex-basis: auto; // 1
+}
+
+
+//
+// Sizes the item according to the width/height properties, but makes the flex
+// item fully inflexible. Similar to initial, except that flex items are
+// not allowed to shrink, even in overflow situations.
+//
+
+.flexNone {
+  flex: 0 0 auto;
+  flex-basis: auto; // 1
+}

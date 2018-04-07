@@ -1,0 +1,776 @@
+// -------------------- Box model ----------------------------------------------
+
+.borderBox {
+  box-sizing: border-box;
+}
+
+.contentBox {
+  box-sizing: content-box;
+}
+
+.paddingBox {
+  box-sizing: padding-box;
+}
+
+// -------------------- Reset --------------------------------------------------
+
+// /!\ Should not be used for overriding other composable classes /!\
+// Only browser defaults or vendors styles.
+// That's why we declare them before the other spacing props in the cascade.
+
+.marginNone {
+  margin: 0;
+}
+
+.marginTopNone {
+  margin: 0;
+}
+
+.marginRightNone {
+  margin: 0;
+}
+
+.marginBottomNone {
+  margin: 0;
+}
+
+.marginLeftNone {
+  margin: 0;
+}
+
+.marginXNone {
+  margin: 0;
+}
+
+.marginYNone {
+  margin: 0;
+}
+
+.paddingNone {
+  padding: 0;
+}
+
+.paddingTopNone {
+  padding: 0;
+}
+
+.paddingRightNone {
+  padding: 0;
+}
+
+.paddingBottomNone {
+  padding: 0;
+}
+
+.paddingLeftNone {
+  padding: 0;
+}
+
+.paddingXNone {
+  padding: 0;
+}
+
+.paddingYNone {
+  padding: 0;
+}
+
+// -------------------- Spacing ------------------------------------------------
+
+.marginXsmall {
+  margin: $spacing-xsmall-mobile;
+}
+
+.marginSmall {
+  margin: $spacing-small-mobile;
+}
+
+.marginBase {
+  margin: $spacing-mobile;
+}
+
+.marginMedium {
+  margin: $spacing-medium-mobile;
+}
+
+.marginLarge {
+  margin: $spacing-large-mobile;
+}
+
+.marginTopXsmall {
+  margin-top: $spacing-xsmall-mobile;
+}
+
+.marginTopSmall {
+  margin-top: $spacing-small-mobile;
+}
+
+.marginTopBase {
+  margin-top: $spacing-mobile;
+}
+
+.marginTopMedium {
+  margin-top: $spacing-medium-mobile;
+}
+
+.marginTopLarge {
+  margin-top: $spacing-large-mobile;
+}
+
+.marginRightXsmall {
+  margin-right: $spacing-xsmall-mobile;
+}
+
+.marginRightSmall {
+  margin-right: $spacing-small-mobile;
+}
+
+.marginRightBase {
+  margin-right: $spacing-mobile;
+}
+
+.marginRightMedium {
+  margin-right: $spacing-medium-mobile;
+}
+
+.marginRightLarge {
+  margin-right: $spacing-large-mobile;
+}
+
+.marginBottomXsmall {
+  margin-bottom: $spacing-xsmall-mobile;
+}
+
+.marginBottomSmall {
+  margin-bottom: $spacing-small-mobile;
+}
+
+.marginBottomBase {
+  margin-bottom: $spacing-mobile;
+}
+
+.marginBottomMedium {
+  margin-bottom: $spacing-medium-mobile;
+}
+
+.marginBottomLarge {
+  margin-bottom: $spacing-large-mobile;
+}
+
+.marginLeftXsmall {
+  margin-left: $spacing-xsmall-mobile;
+}
+
+.marginLeftSmall {
+  margin-left: $spacing-small-mobile;
+}
+
+.marginLeftBase {
+  margin-left: $spacing-mobile;
+}
+
+.marginLeftMedium {
+  margin-left: $spacing-medium-mobile;
+}
+
+.marginLeftLarge {
+  margin-left: $spacing-large-mobile;
+}
+
+.paddingXsmall {
+  padding: $spacing-xsmall-mobile;
+}
+
+.paddingSmall {
+  padding: $spacing-small-mobile;
+}
+
+.paddingBase {
+  padding: $spacing-mobile;
+}
+
+.paddingMedium {
+  padding: $spacing-medium-mobile;
+}
+
+.paddingLarge {
+  padding: $spacing-large-mobile;
+}
+
+.paddingTopXsmall {
+  padding-top: $spacing-xsmall-mobile;
+}
+
+.paddingTopSmall {
+  padding-top: $spacing-small-mobile;
+}
+
+.paddingTopBase {
+  padding-top: $spacing-mobile;
+}
+
+.paddingTopMedium {
+  padding-top: $spacing-medium-mobile;
+}
+
+.paddingTopLarge {
+  padding-top: $spacing-large-mobile;
+}
+
+.paddingRightXsmall {
+  padding-right: $spacing-xsmall-mobile;
+}
+
+.paddingRightSmall {
+  padding-right: $spacing-small-mobile;
+}
+
+.paddingRightBase {
+  padding-right: $spacing-mobile;
+}
+
+.paddingRightMedium {
+  padding-right: $spacing-medium-mobile;
+}
+
+.paddingRightLarge {
+  padding-right: $spacing-large-mobile;
+}
+
+.paddingBottomXsmall {
+  padding-bottom: $spacing-xsmall-mobile;
+}
+
+.paddingBottomSmall {
+  padding-bottom: $spacing-small-mobile;
+}
+
+.paddingBottomBase {
+  padding-bottom: $spacing-mobile;
+}
+
+.paddingBottomMedium {
+  padding-bottom: $spacing-medium-mobile;
+}
+
+.paddingBottomLarge {
+  padding-bottom: $spacing-large-mobile;
+}
+
+.paddingLeftXsmall {
+  padding-left: $spacing-xsmall-mobile;
+}
+
+.paddingLeftSmall {
+  padding-left: $spacing-small-mobile;
+}
+
+.paddingLeftBase {
+  padding-left: $spacing-mobile;
+}
+
+.paddingLeftMedium {
+  padding-left: $spacing-medium-mobile;
+}
+
+.paddingLeftLarge {
+  padding-left: $spacing-large-mobile;
+}
+
+@media screen and (min-width: $screen-small) {
+  .marginXsmall {
+    margin: $spacing-xsmall;
+  }
+
+  .marginSmall {
+    margin: $spacing-small;
+  }
+
+  .marginBase {
+    margin: $spacing;
+  }
+
+  .marginMedium {
+    margin: $spacing-medium;
+  }
+
+  .marginLarge {
+    margin: $spacing-large;
+  }
+
+  .marginTopXsmall {
+    margin-top: $spacing-xsmall;
+  }
+
+  .marginTopSmall {
+    margin-top: $spacing-small;
+  }
+
+  .marginTopBase {
+    margin-top: $spacing;
+  }
+
+  .marginTopMedium {
+    margin-top: $spacing-medium;
+  }
+
+  .marginTopLarge {
+    margin-top: $spacing-large;
+  }
+
+  .marginRightXsmall {
+    margin-right: $spacing-xsmall;
+  }
+
+  .marginRightSmall {
+    margin-right: $spacing-small;
+  }
+
+  .marginRightBase {
+    margin-right: $spacing;
+  }
+
+  .marginRightMedium {
+    margin-right: $spacing-medium;
+  }
+
+  .marginRightLarge {
+    margin-right: $spacing-large;
+  }
+
+  .marginBottomXsmall {
+    margin-bottom: $spacing-xsmall;
+  }
+
+  .marginBottomSmall {
+    margin-bottom: $spacing-small;
+  }
+
+  .marginBottomBase {
+    margin-bottom: $spacing;
+  }
+
+  .marginBottomMedium {
+    margin-bottom: $spacing-medium;
+  }
+
+  .marginBottomLarge {
+    margin-bottom: $spacing-large;
+  }
+
+  .marginLeftXsmall {
+    margin-left: $spacing-xsmall;
+  }
+
+  .marginLeftSmall {
+    margin-left: $spacing-small;
+  }
+
+  .marginLeftBase {
+    margin-left: $spacing;
+  }
+
+  .marginLeftMedium {
+    margin-left: $spacing-medium;
+  }
+
+  .marginLeftLarge {
+    margin-left: $spacing-large;
+  }
+
+  .paddingXsmall {
+    padding: $spacing-xsmall;
+  }
+
+  .paddingSmall {
+    padding: $spacing-small;
+  }
+
+  .paddingBase {
+    padding: $spacing;
+  }
+
+  .paddingMedium {
+    padding: $spacing-medium;
+  }
+
+  .paddingLarge {
+    padding: $spacing-large;
+  }
+
+  .paddingTopXsmall {
+    padding-top: $spacing-xsmall;
+  }
+
+  .paddingTopSmall {
+    padding-top: $spacing-small;
+  }
+
+  .paddingTopBase {
+    padding-top: $spacing;
+  }
+
+  .paddingTopMedium {
+    padding-top: $spacing-medium;
+  }
+
+  .paddingTopLarge {
+    padding-top: $spacing-large;
+  }
+
+  .paddingRightXsmall {
+    padding-right: $spacing-xsmall;
+  }
+
+  .paddingRightSmall {
+    padding-right: $spacing-small;
+  }
+
+  .paddingRightBase {
+    padding-right: $spacing;
+  }
+
+  .paddingRightMedium {
+    padding-right: $spacing-medium;
+  }
+
+  .paddingRightLarge {
+    padding-right: $spacing-large;
+  }
+
+  .paddingBottomXsmall {
+    padding-bottom: $spacing-xsmall;
+  }
+
+  .paddingBottomSmall {
+    padding-bottom: $spacing-small;
+  }
+
+  .paddingBottomBase {
+    padding-bottom: $spacing;
+  }
+
+  .paddingBottomMedium {
+    padding-bottom: $spacing-medium;
+  }
+
+  .paddingBottomLarge {
+    padding-bottom: $spacing-large;
+  }
+
+  .paddingLeftXsmall {
+    padding-left: $spacing-xsmall;
+  }
+
+  .paddingLeftSmall {
+    padding-left: $spacing-small;
+  }
+
+  .paddingLeftBase {
+    padding-left: $spacing;
+  }
+
+  .paddingLeftMedium {
+    padding-left: $spacing-medium;
+  }
+
+  .paddingLeftLarge {
+    padding-left: $spacing-large;
+  }
+}
+
+// Horizontal and vertical axis shorthands.
+
+.marginXXsmall {
+  composes: marginLeftXsmall marginRightXsmall;
+}
+
+.marginXSmall {
+  composes: marginLeftSmall marginRightSmall;
+}
+
+.marginXBase {
+  composes: marginLeftBase marginRightBase;
+}
+
+.marginXMedium {
+  composes: marginLeftMedium marginRightMedium;
+}
+
+.marginXLarge {
+  composes: marginLeftLarge marginRightLarge;
+}
+
+.marginYXsmall {
+  composes: marginTopXsmall marginBottomXsmall;
+}
+
+.marginYSmall {
+  composes: marginTopSmall marginBottomSmall;
+}
+
+.marginYBase {
+  composes: marginTopBase marginBottomBase;
+}
+
+.marginYMedium {
+  composes: marginTopMedium marginBottomMedium;
+}
+
+.marginYLarge {
+  composes: marginTopLarge marginBottomLarge;
+}
+
+.paddingXXsmall {
+  composes: paddingLeftXsmall paddingRightXsmall;
+}
+
+.paddingXSmall {
+  composes: paddingLeftSmall paddingRightSmall;
+}
+
+.paddingXBase {
+  composes: paddingLeftBase paddingRightBase;
+}
+
+.paddingXMedium {
+  composes: paddingLeftMedium paddingRightMedium;
+}
+
+.paddingXLarge {
+  composes: paddingLeftLarge paddingRightLarge;
+}
+
+.paddingYXsmall {
+  composes: paddingTopXsmall paddingBottomXsmall;
+}
+
+.paddingYSmall {
+  composes: paddingTopSmall paddingBottomSmall;
+}
+
+.paddingYBase {
+  composes: paddingTopBase paddingBottomBase;
+}
+
+.paddingYMedium {
+  composes: paddingTopMedium paddingBottomMedium;
+}
+
+.paddingYLarge {
+  composes: paddingTopLarge paddingBottomLarge;
+}
+
+// -------------------- Place shorthands ---------------------------------------
+
+// See https://drafts.csswg.org/css-align-3/#place-items-property
+// See https://github.com/malyw/postcss-place-shorthands
+
+// 1. Fallback.
+.placeItemsCenter {
+  align-items: center; // 1
+  justify-items: center; // 1
+  place-items: center;
+}
+
+// -------------------- Positioning schemes ------------------------------------
+
+.positionStatic {
+  position: static;
+}
+
+.positionRelative {
+  position: relative;
+}
+
+.positionAbsolute {
+  position: absolute;
+}
+
+.positionFixed {
+  position: fixed;
+}
+
+.positionSticky {
+  position: sticky;
+}
+
+// -------------------- Backgrounds --------------------------------------------
+
+.backgroundColorWhite {
+  background-color: white;
+}
+
+.backgroundColorGreyLighter {
+  background-color: $color-grey-lighter;
+}
+
+.backgroundColorGreyLight {
+  background-color: $color-grey-light;
+}
+
+.backgroundColorGrey {
+  background-color: $color-grey;
+}
+
+.backgroundColorGreyDark {
+  background-color: $color-grey-dark;
+}
+
+.backgroundColorGreyDarker {
+  background-color: $color-grey-darker;
+}
+
+.backgroundColorTransparent {
+  background-color: transparent;
+}
+
+// -------------------- Backgrounds: hover -------------------------------------
+
+.hoverBackgroundColorWhite {
+  &:hover {
+    background-color: white;
+  }
+}
+
+.hoverBackgroundColorSuccess {
+  &:hover {
+    background-color: $color-success;
+  }
+}
+
+.hoverBackgroundColorSuccessDark {
+  &:hover {
+    background-color: mix(black, $color-success, 10%);
+  }
+}
+
+// -------------------- Borders ------------------------------------------------
+
+.borderColorWhite {
+  border-color: white;
+}
+
+.borderColorInfo {
+  border-color: $color-info;
+}
+
+.borderColorSuccess {
+  border-color: $color-success;
+}
+
+.borderColorWarning {
+  border-color: $color-warning;
+}
+
+.borderColorDanger {
+  border-color: $color-danger;
+}
+
+.borderColorGrey {
+  border-color: $color-grey;
+}
+
+.borderColorGreyDark {
+  border-color: $color-grey-dark;
+}
+
+.borderColorGreyDarker {
+  border-color: $color-grey-darker;
+}
+
+.borderColorTransparent {
+  border-color: transparent;
+}
+
+// -------------------- Borders: hover -----------------------------------------
+
+.hoverBorderColorWhite {
+  &:hover {
+    border-color: white;
+  }
+}
+
+.hoverBorderColorInfo {
+  &:hover {
+    border-color: $color-info;
+  }
+}
+
+.hoverBorderColorSuccess {
+  &:hover {
+    border-color: $color-success;
+  }
+}
+
+.hoverBorderColorWarning {
+  &:hover {
+    border-color: $color-warning;
+  }
+}
+
+.hoverBorderColorDanger {
+  &:hover {
+    border-color: $color-danger;
+  }
+}
+
+.hoverBorderColorGrey {
+  &:hover {
+    border-color: $color-grey;
+  }
+}
+
+.hoverBorderColorGreyDark {
+  &:hover {
+    border-color: $color-grey-dark;
+  }
+}
+
+.hoverBorderColorGreyDarker {
+  &:hover {
+    border-color: $color-grey-darker;
+  }
+}
+
+.hoverBorderColorTransparent {
+  &:hover {
+    border-color: transparent;
+  }
+}
+
+// -------------------- Hoverable ----------------------------------------------
+
+.hoverable {
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.interactive {
+  composes: hoverable;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// -------------------- Separators ---------------------------------------------
+
+.separatorTop {
+  margin-top: 1px;
+}
+
+.separatorRight {
+  margin-right: 1px;
+}
+
+.separatorBottom {
+  margin-bottom: 1px;
+}
+
+.separatorLeft {
+  margin-left: 1px;
+}
