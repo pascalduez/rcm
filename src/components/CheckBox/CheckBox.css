@@ -1,0 +1,25 @@
+.root {
+}
+
+.trigger {
+}
+
+.label {
+}
+
+.icon {
+}
+
+.checkmark {
+  composes: icon;
+}
+
+.dash {
+  composes: icon;
+}
+
+.trigger:checked {
+}
+
+.trigger:indeterminate {
+}
