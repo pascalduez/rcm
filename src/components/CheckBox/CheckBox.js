@@ -11,11 +11,11 @@ export type Props = {
   value?: string,
   defaultChecked?: boolean,
   checked?: boolean,
-  indeterminate?: boolean,
+  indeterminate: boolean,
   children?: React.Node,
   inputProps?: Object,
   className?: string,
-  classes?: { [key: string]: string },
+  classes: { [key: string]: string },
   onChange?: (evt: SyntheticInputEvent<HTMLInputElement>) => void,
 };
 
@@ -38,7 +38,8 @@ class CheckBox extends React.Component<Props, void> {
   }
 
   classOf(name: string): string {
-    return this.props.classes[name] || '';
+    const { classes } = this.props;
+    return name in classes ? classes[name] : '';
   }
 
   render() {

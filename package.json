@@ -56,7 +56,9 @@
       "./babel.config.js"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "popper.js": "^1.14.3"
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.44",
     "@babel/core": "^7.0.0-beta.44",

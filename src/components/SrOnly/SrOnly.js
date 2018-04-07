@@ -3,7 +3,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import styles from './SrOnly.scss';
+import styles from './SrOnly.css';
 
 export type Props = {
   xsm?: boolean,
