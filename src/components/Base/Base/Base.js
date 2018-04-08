@@ -13,7 +13,7 @@ export type Props = {
   tagName: string,
   className?: string,
   children?: React.Node,
-  refCallback?: (node: React.Ref<*>) => {},
+  refCallback?: (node: React.ElementRef<*>) => {},
 } & InjectedProps;
 
 function Base({

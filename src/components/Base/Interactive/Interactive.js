@@ -16,7 +16,7 @@ export type Props = {
   type?: string,
   activeClassName?: string,
   tagName?: ?string,
-  refCallback?: (node: React.Ref<*>) => void,
+  refCallback?: (node: React.ElementRef<*>) => void,
 } & InjectedProps;
 
 /**
