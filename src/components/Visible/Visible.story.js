@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import Visible from './Visible';
 
@@ -15,10 +14,10 @@ function Dummy({
   return <p ref={refCallback}>{visible === true ? 'YES' : 'NO'}</p>;
 }
 
-storiesOf('Visible', module).add('Demo', () => (
+export default () => (
   <div style={{ minHeight: '200vh' }}>
     <Visible>
       <Dummy />
     </Visible>
   </div>
-));
+);

@@ -1,12 +1,11 @@
 // @flow
 
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import Hide from './Hide';
 
-storiesOf('Hide', module).add('Demo', () => (
-  <div>
+export default () => (
+  <>
     <Hide tagName="div" style={{ padding: '1rem' }} xsm>
       Hidden at xsm breakpoint
     </Hide>
@@ -31,5 +30,5 @@ storiesOf('Hide', module).add('Demo', () => (
     <Hide tagName="div" style={{ padding: '1rem' }} xxwd>
       Hidden at xxwd breakpoint
     </Hide>
-  </div>
-));
+  </>
+);

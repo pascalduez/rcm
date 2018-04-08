@@ -1,13 +1,12 @@
 // @flow
 
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import Component from './SrOnly';
 
 const SrOnly = props => <Component tagName="div" {...props} />;
 
-storiesOf('SrOnly', module).add('Demo', () => (
+export default () => (
   <div theme="grey" style={{ lineHeight: 2 }}>
     <SrOnly>Hidden at all breakpoints</SrOnly>
     <SrOnly xsm>Hidden at xsm breakpoint</SrOnly>
@@ -19,4 +18,4 @@ storiesOf('SrOnly', module).add('Demo', () => (
     <SrOnly wd>Hidden at wd breakpoint</SrOnly>
     <SrOnly xwd>Hidden at xwd breakpoint</SrOnly>
   </div>
-));
+);

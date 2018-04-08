@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import Resize from './Resize';
 
@@ -20,10 +19,10 @@ function Dummy({ entry, refCallback }: Props) {
   );
 }
 
-storiesOf('Resize', module).add('Demo', () => (
+export default () => (
   <div style={{ padding: '1rem' }}>
     <Resize>
       <Dummy />
     </Resize>
   </div>
-));
+);

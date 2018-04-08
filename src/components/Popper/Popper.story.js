@@ -1,11 +1,10 @@
 // @flow
 
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import Popper from './Popper';
 
-storiesOf('Popper', module).add('Demo', () => (
+export default () => (
   <div
     style={{
       minHeight: '200vh',
@@ -16,4 +15,4 @@ storiesOf('Popper', module).add('Demo', () => (
   >
     <Popper>Just some text</Popper>
   </div>
-));
+);
