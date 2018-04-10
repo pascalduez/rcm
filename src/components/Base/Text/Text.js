@@ -3,15 +3,14 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import withText from './withText';
-import type { Props as InjectedProps } from './withText';
+import withText, { type TextProps } from './withText';
 
 export type Props = {
   tagName: string,
-  component?: ?React.ComponentType<*>,
+  component?: ?React.Element,
   className?: string,
   children?: React.Node,
-} & InjectedProps;
+} & TextProps;
 
 function Text({
   tagName = 'span',

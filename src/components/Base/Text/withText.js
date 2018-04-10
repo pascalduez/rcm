@@ -1,12 +1,10 @@
 /* @flow */
 /* eslint-disable react/no-unused-prop-types */
 
-import React from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 
-import styles from './Text.scss';
-
-type ReactComponent = typeof React.Component | Function;
+import styles from './Text.css';
 
 type Size = 'small' | 'base' | 'big' | 'bigger';
 
@@ -76,7 +74,7 @@ const themesMap: ThemeProps = {
   },
 };
 
-export type Props = {
+export type TextProps = {
   size?: ?Size,
   weight?: ?Weight,
   fontStyle?: ?Style,
@@ -95,7 +93,9 @@ export type Props = {
 /**
  * Helper: font and text styling component.
  */
-export default function withText(Comp: ReactComponent): ReactComponent {
+export default function withText<Props: TextProps>(
+  Component: React.ComponentType<Props>
+): React.ComponentType<Props> {
   function Text(props: Props) {
     const themeProps = props.theme ? themesMap[props.theme] : {};
     const {
@@ -175,7 +175,7 @@ export default function withText(Comp: ReactComponent): ReactComponent {
       className
     );
 
-    return <Comp className={rootClasses} {...extraProps} />;
+    return <Component className={rootClasses} {...extraProps} />;
   }
 
   return Text;

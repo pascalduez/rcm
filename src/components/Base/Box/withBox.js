@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import classNames from 'classnames';
-import { camelCase } from 'lodash-es';
+import camelCase from 'lodash/camelCase';
 
 import styles from './Box.css';
 

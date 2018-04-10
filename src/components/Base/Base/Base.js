@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import { flowRight as compose } from 'lodash-es';
+import compose from 'lodash/flowRight';
 
 import { withBox, type withBoxProps } from '../Box';
 import { withFlex, type withFlexProps } from '../Flex';
@@ -13,7 +13,7 @@ export type Props = {
   tagName: string,
   className?: string,
   children?: React.Node,
-  refCallback?: (node: React.ElementRef<*>) => {},
+  refCallback?: (node: React.ElementRef<*>) => void,
 } & InjectedProps;
 
 function Base({

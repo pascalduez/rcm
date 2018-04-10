@@ -2,7 +2,7 @@
 
 export { default as withText } from './withText';
 export type {
-  Props as withTextProps,
+  TextProps as withTextProps,
   Color as TextColor,
   Theme as TextTheme,
 } from './withText';

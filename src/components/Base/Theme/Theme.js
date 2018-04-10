@@ -1,4 +1,5 @@
-// @flow
+/* @flow */
+/* eslint-disable react/sort-comp, react/no-unused-state */
 
 import * as React from 'react';
 
@@ -10,7 +11,7 @@ export type Props = {
 };
 
 type State = {
-  value: Theme,
+  theme: Theme,
   switchTheme: () => void,
 };
 
@@ -21,20 +22,16 @@ class ThemeProvider extends React.Component<Props, State> {
     value: 'light',
   };
 
-  constructor(props) {
-    super(props);
+  switchTheme = () => {
+    this.setState(prevState => ({
+      theme: prevState.theme === 'light' ? 'dark' : 'light',
+    }));
+  };
 
-    this.switchTheme = () => {
-      this.setState(prevState => ({
-        theme: prevState.theme === 'light' ? 'dark' : 'light',
-      }));
-    };
-
-    this.state = {
-      theme: props.value,
-      switchTheme: this.switchTheme,
-    };
-  }
+  state = {
+    theme: this.props.value,
+    switchTheme: this.switchTheme,
+  };
 
   render() {
     return <Provider value={this.state}>{this.props.children}</Provider>;

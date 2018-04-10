@@ -2,13 +2,13 @@
 
 import * as React from 'react';
 
-import withBox, { type Props as InjectedProps } from './withBox';
+import withBox, { type BoxProps } from './withBox';
 
 export type Props = {
   tagName: string,
   className?: string,
   children?: React.Node,
-} & InjectedProps;
+} & BoxProps;
 
 function Box({ tagName = 'div', children, ...extraProps }: Props) {
   return React.createElement(tagName, extraProps, children);

@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import { flowRight as compose } from 'lodash-es';
+import compose from 'lodash/flowRight';
 import { Link } from 'react-router';
 
 import { withText, type withTextProps } from '../Text';

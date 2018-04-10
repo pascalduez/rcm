@@ -1,4 +1,4 @@
 // @flow
 
-export { default } from './Theme';
-export type { Props as ThemeProps } from './Theme';
+export { ThemeProvider, ThemeConsumer } from './Theme';
+export type { Theme, Props as ThemeProps } from './Theme';
