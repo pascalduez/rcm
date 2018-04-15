@@ -1,13 +1,8 @@
-/* eslint-disable global-require */
+// @flow
 
-const theme = require('./theme');
-
-// Export configured plugin for use with `babel-plugin-css-modules-transform`.
-module.exports = config =>
-  require('postcss-custom-properties')(Object.assign(
-    {
-      variables: theme,
-      preserve: true,
-    },
-    config
-  ));
+export default {
+  'color-primary': 'green',
+  'color-secondary': 'blue',
+  'color-danger': 'red',
+  'color-gray': '#ccc',
+};

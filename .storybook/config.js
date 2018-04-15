@@ -2,7 +2,7 @@ import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
 setOptions({
-  name: 'RCM',
+  name: 'React module boilerplate',
   downPanelInRight: true,
   sidebarAnimations: true,
 });

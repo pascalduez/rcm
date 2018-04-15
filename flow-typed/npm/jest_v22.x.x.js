@@ -1,5 +1,5 @@
-// flow-typed signature: ce84f78f95836afb1ef53040f4906859
-// flow-typed version: ab9a73e70c/jest_v22.x.x/flow_>=v0.39.x
+// flow-typed signature: 18018da6c1a1d95b4ab1c64bb5fe86ca
+// flow-typed version: c1ad61e7d4/jest_v22.x.x/flow_>=v0.39.x
 
 type JestMockFn<TArguments: $ReadOnlyArray<*>, TReturn> = {
   (...args: TArguments): TReturn,
@@ -55,11 +55,6 @@ type JestMockFn<TArguments: $ReadOnlyArray<*>, TReturn> = {
   mockImplementationOnce(
     fn: (...args: TArguments) => TReturn
   ): JestMockFn<TArguments, TReturn>,
-  /**
-   * Accepts a string to use in test result output in place of "jest.fn()" to
-   * indicate which mock function is being referenced.
-   */
-  mockName(name: string): JestMockFn<TArguments, TReturn>,
   /**
    * Just a simple sugar function for returning `this`
    */
@@ -131,16 +126,14 @@ type EnzymeMatchersType = {
   toBeChecked(): void,
   toBeDisabled(): void,
   toBeEmpty(): void,
-  toBeEmptyRender(): void,
   toBePresent(): void,
   toContainReact(element: React$Element<any>): void,
-  toExist(): void,
   toHaveClassName(className: string): void,
   toHaveHTML(html: string): void,
-  toHaveProp: ((propKey: string, propValue?: any) => void) & ((props: Object) => void),
+  toHaveProp(propKey: string, propValue?: any): void,
   toHaveRef(refName: string): void,
-  toHaveState: ((stateKey: string, stateValue?: any) => void) & ((state: Object) => void),
-  toHaveStyle: ((styleKey: string, styleValue?: any) => void) & ((style: Object) => void),
+  toHaveState(stateKey: string, stateValue?: any): void,
+  toHaveStyle(styleKey: string, styleValue?: any): void,
   toHaveTagName(tagName: string): void,
   toHaveText(text: string): void,
   toIncludeText(text: string): void,
@@ -404,13 +397,6 @@ type JestObjectType = {
    * Executes only the macro task queue (i.e. all tasks queued by setTimeout()
    * or setInterval() and setImmediate()).
    */
-  advanceTimersByTime(msToRun: number): void,
-  /**
-   * Executes only the macro task queue (i.e. all tasks queued by setTimeout()
-   * or setInterval() and setImmediate()).
-   *
-   * Renamed to `advanceTimersByTime`.
-   */
   runTimersToTime(msToRun: number): void,
   /**
    * Executes only the macro-tasks that are currently pending (i.e., only the
@@ -573,12 +559,12 @@ declare var expect: {
   assertions(expectedAssertions: number): void,
   hasAssertions(): void,
   any(value: mixed): JestAsymmetricEqualityType,
-  anything(): any,
-  arrayContaining(value: Array<mixed>): Array<mixed>,
-  objectContaining(value: Object): Object,
+  anything(): void,
+  arrayContaining(value: Array<mixed>): void,
+  objectContaining(value: Object): void,
   /** Matches any received string that contains the exact expected string. */
-  stringContaining(value: string): string,
-  stringMatching(value: string | RegExp): string
+  stringContaining(value: string): void,
+  stringMatching(value: string | RegExp): void
 };
 
 // TODO handle return type
@@ -595,14 +581,14 @@ declare var jest: JestObjectType;
 declare var jasmine: {
   DEFAULT_TIMEOUT_INTERVAL: number,
   any(value: mixed): JestAsymmetricEqualityType,
-  anything(): any,
-  arrayContaining(value: Array<mixed>): Array<mixed>,
+  anything(): void,
+  arrayContaining(value: Array<mixed>): void,
   clock(): JestClockType,
   createSpy(name: string): JestSpyType,
   createSpyObj(
     baseName: string,
     methodNames: Array<string>
   ): { [methodName: string]: JestSpyType },
-  objectContaining(value: Object): Object,
-  stringMatching(value: string): string
+  objectContaining(value: Object): void,
+  stringMatching(value: string): void
 };

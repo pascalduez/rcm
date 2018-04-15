@@ -3,6 +3,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import SrOnly from '../SrOnly';
+import { isNode } from '../../utils';
 
 import styles from './CheckBox.css';
 
@@ -36,18 +37,23 @@ class CheckBox extends React.Component<Props, void> {
   };
 
   componentDidMount() {
-    this.inputRef.current.indeterminate = this.props.indeterminate;
+    this.setIndeterminate();
   }
 
   componentDidUpdate(prevProps: Props) {
     if (prevProps.indeterminate !== this.props.indeterminate) {
+      this.setIndeterminate();
+    }
+  }
+
+  setIndeterminate() {
+    if (isNode(this.inputRef.current)) {
       this.inputRef.current.indeterminate = this.props.indeterminate;
     }
   }
 
   classOf(name: string): string {
-    const { classes } = this.props;
-    return name in classes ? classes[name] : '';
+    return name in this.props.classes ? this.props.classes[name] : '';
   }
 
   render() {
