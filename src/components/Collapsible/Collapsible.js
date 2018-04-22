@@ -10,8 +10,8 @@ type State = {
 export type Props = {
   collapsed?: boolean,
   render: (
-    getActionProps: Function,
-    getDrawerProps: Function,
+    getActionProps: (*) => {},
+    getDrawerProps: (*) => {},
     isCollapsed: boolean
   ) => React.Element<*>,
 };

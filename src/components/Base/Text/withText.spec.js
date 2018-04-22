@@ -21,7 +21,7 @@ describe('withText()', () => {
       <Wrapped
         size="big"
         weight="bold"
-        color="green"
+        color="white"
         align="end"
         transform="capitalize"
       />

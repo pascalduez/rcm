@@ -11,6 +11,7 @@ interfaces/dom.js
 
 [lints]
 all=warn
+inexact-spread=off
 
 [options]
 include_warnings=true

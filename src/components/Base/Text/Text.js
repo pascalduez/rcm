@@ -7,7 +7,7 @@ import withText, { type TextProps } from './withText';
 
 export type Props = {
   tagName: string,
-  component?: ?React.Element,
+  component?: ?React.Element<*>,
   className?: string,
   children?: React.Node,
 } & TextProps;

@@ -28,7 +28,7 @@ export type Props = {
 };
 
 class CheckBox extends React.Component<Props, void> {
-  inputRef: React.Ref<HTMLInputElement> = React.createRef();
+  inputRef: { current: null | HTMLInputElement } = React.createRef();
 
   static defaultProps = {
     indeterminate: false,
@@ -47,7 +47,7 @@ class CheckBox extends React.Component<Props, void> {
   }
 
   setIndeterminate() {
-    if (isNode(this.inputRef.current)) {
+    if (this.inputRef.current && isNode(this.inputRef.current)) {
       this.inputRef.current.indeterminate = this.props.indeterminate;
     }
   }

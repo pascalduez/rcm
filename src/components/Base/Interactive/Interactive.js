@@ -1,8 +1,10 @@
-// @flow
+/* @flow */
+
+/* flowlint sketchy-null-string: off */
 
 import * as React from 'react';
 import compose from 'lodash/flowRight';
-import { Link } from 'react-router';
+import { Link, type LocationShape } from 'react-router';
 
 import { withText, type withTextProps } from '../Text';
 import { withBox, type withBoxProps } from '../Box';
@@ -11,7 +13,7 @@ import { withFlex, type withFlexProps } from '../Flex';
 type InjectedProps = withBoxProps & withFlexProps & withTextProps;
 
 export type Props = {
-  to?: string | Object,
+  to?: string | LocationShape,
   href?: string,
   type?: string,
   activeClassName?: string,

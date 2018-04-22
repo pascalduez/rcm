@@ -42,7 +42,7 @@ export type Color =
   | 'danger'
   | 'disabled';
 
-export type HoverColor = 'inherit' | 'white' | 'blue';
+export type HoverColor = 'inherit' | 'white';
 
 type ThemeProps = {
   [key: Theme]: {

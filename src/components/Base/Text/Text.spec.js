@@ -21,9 +21,9 @@ describe('<Text />', () => {
   it('should add the proper classes based on props', () => {
     const wrapper = render(
       <Text
-        size="big"
+        size="small"
         weight="bold"
-        color="green"
+        color="white"
         align="end"
         transform="capitalize"
       >
