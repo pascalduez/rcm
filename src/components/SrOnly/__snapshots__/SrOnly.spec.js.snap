@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SrOnly /> should render the proper \`lg\` breakpoint classes 1`] = `
+<span
+  class="SrOnly-lg"
+>
+  test
+</span>
+`;
+
+exports[`<SrOnly /> should render the proper \`md\` breakpoint classes 1`] = `
+<span
+  class="SrOnly-md"
+>
+  test
+</span>
+`;
+
+exports[`<SrOnly /> should render the proper \`sm\` breakpoint classes 1`] = `
+<span
+  class="SrOnly-sm"
+>
+  test
+</span>
+`;
+
+exports[`<SrOnly /> should render the proper \`wd\` breakpoint classes 1`] = `
+<span
+  class="SrOnly-wd"
+>
+  test
+</span>
+`;
+
+exports[`<SrOnly /> should render the proper \`xlg\` breakpoint classes 1`] = `
+<span
+  class="SrOnly-xlg"
+>
+  test
+</span>
+`;
+
+exports[`<SrOnly /> should render the proper \`xsm\` breakpoint classes 1`] = `
+<span
+  class="SrOnly-xsm"
+>
+  test
+</span>
+`;
+
+exports[`<SrOnly /> should render the proper \`xwd\` breakpoint classes 1`] = `
+<span
+  class="SrOnly-xwd"
+>
+  test
+</span>
+`;
+
+exports[`<SrOnly /> should render the proper \`xxlg\` breakpoint classes 1`] = `
+<span
+  class="undefined"
+>
+  test
+</span>
+`;
+
+exports[`<SrOnly /> should render the proper default markup and classes 1`] = `
+<span
+  class="SrOnly-all"
+>
+  test
+</span>
+`;

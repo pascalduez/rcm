@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text /> should add the proper classes based on props 1`] = `
+<span
+  class="Text-fontSizeSmall Text-fontWeightBold Text-colorWhite Text-textAlignEnd Text-textTransformCapitallize"
+>
+  Just a text
+</span>
+`;
+
+exports[`<Text /> should pass extra props through 1`] = `
+<span
+  class=""
+  style="display:block"
+>
+  Just a text
+</span>
+`;
+
+exports[`<Text /> should render the proper default markup and classes 1`] = `
+<span
+  class=""
+>
+  Just a text
+</span>
+`;
+
+exports[`<Text /> should render the proper markup following the \`tagName\` property 1`] = `
+<h1
+  class=""
+>
+  Just a text
+</h1>
+`;
+
+exports[`<Text /> the \`component\` property should inject classes to passed elements 1`] = `
+<div
+  class="Text-fontSizeBigger Text-fontWeightBold"
+>
+  Just a text
+</div>
+`;
+
+exports[`<Text /> the \`component\` property should preserve elements own classes 1`] = `
+<div
+  class="test Text-fontSizeBigger Text-fontWeightBold"
+>
+  Just a text
+</div>
+`;

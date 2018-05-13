@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Base /> should pass extra props through 1`] = `
+<div
+  class=""
+  style="display:block"
+>
+  Just a text
+</div>
+`;
+
+exports[`<Base /> should render the proper default markup and classes 1`] = `
+<div
+  class=""
+/>
+`;

@@ -7,7 +7,6 @@ module.exports = ({ options: { appendVariables = true } }) => ({
   plugins: {
     'postcss-preset-env': {
       features: {
-        'custom-property-sets': {},
         'custom-properties': {
           variables,
           appendVariables,
@@ -16,7 +15,6 @@ module.exports = ({ options: { appendVariables = true } }) => ({
         },
       },
     },
-    autoprefixer: {},
     'postcss-reporter': {},
   },
 });

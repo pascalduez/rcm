@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withFlex() should add the proper classes based on props 1`] = `
+<div
+  class="undefined"
+/>
+`;
+
+exports[`withFlex() should pass custom classes trough 1`] = `
+<div
+  class="test"
+/>
+`;
+
+exports[`withFlex() should render the proper default markup and classes 1`] = `
+<div
+  class=""
+/>
+`;

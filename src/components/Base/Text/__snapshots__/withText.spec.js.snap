@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withText() should add the proper classes based on props 1`] = `
+<div
+  class="Text-fontSizeBig Text-fontWeightBold Text-colorWhite Text-textAlignEnd Text-textTransformCapitallize"
+/>
+`;
+
+exports[`withText() should render the proper default markup and classes 1`] = `
+<div
+  class=""
+/>
+`;

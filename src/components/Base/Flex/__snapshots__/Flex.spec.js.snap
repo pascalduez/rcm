@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Flex /> should add the proper classes based on props 1`] = `
+<div
+  class=""
+/>
+`;
+
+exports[`<Flex /> should pass custom classes trough 1`] = `
+<div
+  class="test"
+/>
+`;
+
+exports[`<Flex /> should pass extra props through 1`] = `
+<div
+  class=""
+  style="display:block"
+>
+  Just a text
+</div>
+`;
+
+exports[`<Flex /> should render the proper default markup and classes 1`] = `
+<div
+  class=""
+/>
+`;
+
+exports[`<Flex /> should render the proper markup following the \`tagName\` property 1`] = `
+<span
+  class=""
+/>
+`;

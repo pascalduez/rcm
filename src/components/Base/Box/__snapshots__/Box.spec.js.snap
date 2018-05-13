@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Box /> should add the proper classes based on props 1`] = `
+<div
+  class="undefined"
+/>
+`;
+
+exports[`<Box /> should pass extra props through 1`] = `
+<div
+  class=""
+  style="display:block"
+>
+  Just a text
+</div>
+`;
+
+exports[`<Box /> should render the proper default markup and classes 1`] = `
+<div
+  class=""
+/>
+`;
+
+exports[`<Box /> should render the proper markup following the \`tagName\` property 1`] = `
+<span
+  class=""
+/>
+`;
